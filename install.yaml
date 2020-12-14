@@ -1,0 +1,36 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trek
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: star-trek-bot
+  namespace: trek
+  labels:
+    app: star-trek-bot
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: star-trek-bot
+  template:
+    metadata:
+      labels:
+        app: star-trek-bot
+    spec:
+      containers:
+      - name: star-trek-container
+        image: borink8slearning.azurecr.io/star-trek-bot:0.1.7
+        env:
+        - name: MONGO_PASS
+          valueFrom:
+            secretKeyRef:
+              name: mongo-pass
+              key: password
+      imagePullSecrets:
+      - name: borinazreg
