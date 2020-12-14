@@ -32,5 +32,10 @@ spec:
             secretKeyRef:
               name: mongo-pass
               key: password
+        - name: BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: bot-token
+              key: token
       imagePullSecrets:
       - name: borinazreg
