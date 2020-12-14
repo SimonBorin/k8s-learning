@@ -34,3 +34,4 @@ spec:
               key: token
       imagePullSecrets:
       - name: borinazreg
+#tst
