@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: star-trek-container
-        image: borink8slearning.azurecr.io/star-trek-bot:0.1.9
+        image: borink8slearning.azurecr.io/star-trek-bot:0.1.10
         env:
         - name: MONGO_PASS
           valueFrom:
