@@ -62,7 +62,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo-mongodb
-  namespace: mongo
+  namespace:  trek
   labels:
     app.kubernetes.io/name: mongodb
     helm.sh/chart: mongodb-10.1.3
